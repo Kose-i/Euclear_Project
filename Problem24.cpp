@@ -7,14 +7,14 @@
 std::vector<int> make_count(){
   std::vector<int> counter(10, 0);
   for (int i{};i < 10;++i) {
-    counter[i] = std::tgamma(10 - i);
+    counter[i] = std::tgamma(10 - i) + 1;
   }
   return counter;
 }
 
 std::vector<int> count_required(const std::vector<int>& counter)
 {
-  long long int required_count = 1000000 - 1;
+  long int required_count = 1000000;
   std::vector<int> box_count(10, 0);
   for (int i {};i < 10;++i) {
     box_count[i] = required_count / counter[i];
@@ -28,6 +28,7 @@ void swap(int& a , int& b) {
   a = std::move(b);
   b = std::move(t);
 }
+
 std::vector<int> make_ans(const std::vector<int>& order){
   std::vector<int> answer(10, 0);
   std::iota(answer.begin(), answer.end(), 0);
@@ -37,11 +38,11 @@ std::vector<int> make_ans(const std::vector<int>& order){
   }
   return answer;
 }
-int main(int argc, char** argv){
+
+int main (int argc, char** argv) {
 
   std::vector<int> counter = make_count();
   std::vector<int> box_count = count_required(counter);
-
   std::vector<int> answer = make_ans(box_count);
 
   for (const auto& e : answer) {
