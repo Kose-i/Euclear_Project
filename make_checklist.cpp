@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
   std::ofstream output_file("number_check.txt");
   output_file << "success is blank\n";
   for (auto i = 1;i < NUMBER_SIZE;++i) {
-    output_file << i;
+    output_file << std::setfill(' ') << std::setw(3) << i;
     if (i % 20 == 0) output_file << '\n';
     else output_file << ' ';
   }
