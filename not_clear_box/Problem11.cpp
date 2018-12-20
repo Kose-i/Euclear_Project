@@ -2,7 +2,7 @@
 #include <vector>
 #include <iomanip>
 
-int main()
+int main(int argc, char** argv)
 {
   std::vector<std::vector<int>> vec(20, std::vector<int>(20,0));
   for(auto& e : vec)
