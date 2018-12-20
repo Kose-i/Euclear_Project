@@ -1,5 +1,5 @@
 
-SRC = Problem26.cpp
+SRC = Problem11.cpp
 
 all:main
 main:$(SRC)
